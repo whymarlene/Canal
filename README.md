@@ -1,3 +1,3 @@
 # WeShallSEE
  
-Chicken Noodle Soup wih a soda on the side
+Chicken Noodle Soup with a soda on the side
