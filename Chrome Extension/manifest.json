@@ -1,0 +1,10 @@
+{
+    "name": "WeShallSEE",
+    "version": "1.0",
+    "description": "Bringing your business to people",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      },
+    "manifest_version": 2
+  }
