@@ -1,3 +1,13 @@
+*{
+    font-family: "Inter";
+}
 body {
     background-color: #EFEFF4;;
+}
+.navbar{
+    list-style-type: none;
+}
+.logo {
+    font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
 }
