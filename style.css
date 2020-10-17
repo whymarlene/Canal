@@ -42,10 +42,6 @@ li{
 .items {
     padding: 10px;
     height: 40pt;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center; */
 }
 
 #canal{
@@ -169,10 +165,6 @@ li{
 }
 
 .signUp li {
-    /* position: relative;
-    text-align: center; */
-
-    font-family: Inter;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -232,9 +224,7 @@ li{
     line-height: 24px;
     letter-spacing: -0.006em;
 }
-.signInArea p{
-    
-}
+
 .signInArea  input[type=text], input[type=password] {
     width: 390pt;
     padding: 12px 20px;
@@ -252,15 +242,26 @@ li{
     background: #008FB2;
     border-radius: 100px;
     color: #FFFFFF;
-
+    border-color: #008FB2;
     /* FILL-BUTTON-TEXT-SHADOW */
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
 
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 }
 .signInArea a{
     color: #008FB2;
 }
+.dont{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
 
+    letter-spacing: -0.006em;
+}
 
 
 /* Create Account */
@@ -288,6 +289,8 @@ li{
     font-size: 48px;
     line-height: 40px;
     letter-spacing: -0.05em;
+    display: flex;
+    align-self: start;
 }
 .createAccount label{
     font-style: normal;
@@ -296,9 +299,7 @@ li{
     line-height: 24px;
     letter-spacing: -0.006em;
 }
-.createAccount p{
-    
-}
+
 .createAccount input[type=text], input[type=password] {
     width: 390pt;
     padding: 12px 20px;
@@ -310,19 +311,32 @@ li{
 
   }
 .createAccount input[type=submit] {
-    width: 138pt;
+    width: 138px;
     padding: 12px 20px;
     margin: 8px 0; 
     background: #469F3D;
     border-radius: 100px;
     color: #FFFFFF;
+    border-color: #469F3D;
 
     /* FILL-BUTTON-TEXT-SHADOW */
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
 
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 }
 .createAccount a {
     color: #469F3D;
+}
+.already{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+
+    letter-spacing: -0.006em;
 }
 
   
