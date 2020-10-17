@@ -24,7 +24,10 @@ p {
 
     color: rgba(60, 60, 67, 0.6);
 }
-
+*:not(.button) a:hover,
+* a:hover::after {
+    color: #ccc;
+}
 /* homepage */
 .homepage {
     background-color: #EFEFF4;;
@@ -43,11 +46,6 @@ li{
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center; */
-}
-
-*:not(.button) a:hover,
-* a:hover::after {
-    color: #ccc;
 }
 
 #canal{
@@ -127,7 +125,6 @@ li{
     bottom: 42.22%;
 }
 
-
 .signIn {
     position: absolute;
     left: 81.79%;
@@ -204,11 +201,128 @@ li{
 
 /* Sign In */
 .sI{
+    height: 100%;
     background: linear-gradient(to right, #008FB2 0%, #008FB2 37%, white 37%, white 100%);
 }
+
+.signInArea{
+    position: relative;
+    left: 37%;
+    right: 95%;
+    top: 24.22%;
+    bottom: 23%;
+    width: 63%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signInArea h1{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 40px;
+    letter-spacing: -0.05em;
+}
+.signInArea label{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.006em;
+}
+.signInArea p{
+    
+}
+.signInArea  input[type=text], input[type=password] {
+    width: 390pt;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgba(60, 60, 67, 0.29);
+    border-radius: 8px;
+    box-sizing: border-box;
+
+ }
+.signInArea input[type=submit] {
+    width: 138pt;
+    padding: 12px 20px;
+    margin: 8px 0; 
+    background: #008FB2;
+    border-radius: 100px;
+    color: #FFFFFF;
+
+    /* FILL-BUTTON-TEXT-SHADOW */
+
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+.signInArea a{
+    color: #008FB2;
+}
+
 
 
 /* Create Account */
 .cA{
+    height: 100%;
     background: linear-gradient(to right, #469F3D 0%, #469F3D 37%, white 37%, white 100%);
 }
+
+.createAccount{
+    position: relative;
+    left: 37%;
+    right: 95%;
+    top: 24.22%;
+    bottom: 23%;
+    width: 63%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.createAccount h1{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 40px;
+    letter-spacing: -0.05em;
+}
+.createAccount label{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.006em;
+}
+.createAccount p{
+    
+}
+.createAccount input[type=text], input[type=password] {
+    width: 390pt;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgba(60, 60, 67, 0.29);
+    border-radius: 8px;
+    box-sizing: border-box;
+
+  }
+.createAccount input[type=submit] {
+    width: 138pt;
+    padding: 12px 20px;
+    margin: 8px 0; 
+    background: #469F3D;
+    border-radius: 100px;
+    color: #FFFFFF;
+
+    /* FILL-BUTTON-TEXT-SHADOW */
+
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+.createAccount a {
+    color: #469F3D;
+}
+
+  
