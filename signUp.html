@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Create an Account</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
 </head>
+
 <body class="cA">
     <nav>
         <ul class="navbar">
@@ -13,8 +15,21 @@
         </ul>
     </nav>
     <div class="colorblockCA"></div>
-    <div class="CreateAcount">
-        <h1>create an account</h1>
+    <div class="createAccount">
+        <h1>Create an Account</h1>
+        <form action="#">
+            <label for="nameOfBusiness">Name of Business</label><br>
+            <input type="text" placeholder="Enter Name" id="nameOfBusiness" name="nameOfBusiness" required><br>
+            <label for="emailAddress">Email Address</label><br>
+            <input type="text" placeholder="example@email.com" id="emailAddress" name="emailAddress" required><br><br>
+            <label for="password">Password</label><br>
+            <input type="text" placeholder="Enter Password" id="password" name="password" required><br>
+            <label for="reEnterPassword">Re-enter Password</label><br>
+            <input type="text" placeholder="Enter Password" id="reEnterPassword" name="reEnterPassword" required><br>
+            <input type="submit" value="Sign Up">
+        </form>
+        <p class="already">Already have an account?<a href="signIn.html"> Sign In</a></p>
     </div>
 </body>
+
 </html>
