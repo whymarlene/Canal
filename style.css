@@ -44,10 +44,12 @@ li{
     justify-content: space-between;
     align-items: center; */
 }
-.items:not(.button) a:hover,
-.items a:hover::after {
+
+*:not(.button) a:hover,
+* a:hover::after {
     color: #ccc;
 }
+
 #canal{
     /* CANAL */
     position: absolute;
@@ -116,6 +118,7 @@ li{
 .learnMore a{
     color: #FFFFFF;
 }
+
 .desc {
     position: absolute;
     left: 9.71%;
