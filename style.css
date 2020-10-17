@@ -212,3 +212,96 @@ li{
 .cA{
     background: linear-gradient(to right, #469F3D 0%, #469F3D 37%, white 37%, white 100%);
 }
+
+
+/*Profile*/
+
+.profile {
+    background: #EFEFF4;
+}
+
+#greeting {
+    position: absolute;
+    left: 13.57%;
+    right: 57.21%;
+    top: 13.79%;
+    bottom: 81.73%;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 40px;
+    /* identical to box height, or 83% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.05em;
+
+    /* Light / Text / Primary */
+
+    color: #000000;
+}
+
+#form_box {
+    position: absolute;
+    width: 995px;
+    height: 834px;
+    left: calc(50% - 995px/2 - 11.5px);
+    top: 199px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+#profile_form {
+    padding: 15%;
+}
+
+#column1 {
+    float: left;
+    width: 50%;
+}
+
+input[type=file] {
+    padding: 20%;
+}
+
+
+#column2 {
+    float: right;
+    width: 50%;
+}
+
+.profile_form label {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: -0.006em;
+
+    color: #000000;
+}
+
+.profile_form, input[type=url], input[type=text], input[type=tel], textarea, #state {
+    width: 250pt;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgba(60, 60, 67, 0.29);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.profile_form, input[type=submit] {
+    width: 138pt;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background: #008FB2;
+    border-radius: 100px;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}

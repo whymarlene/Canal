@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:wght@300;400;600;700;800&display=swap">
+</head>
+<body class="profile">
+    <nav>
+        <ul class="navbar">
+            <li class="logo"><img src="./Assets/logo.svg"><a href="#"></a></li>
+            <div class="items">
+                <div class="signUp">
+                    <li><a href="#">Sign Out</a></li>
+                </div>
+            </div>
+        </ul>
+    </nav>
+    <p id="greeting">Hello, there!</p>
+    <div id="form_box">
+        <form id="profile_form">
+            <div id="column1">
+                <label for="pic"></label>
+                <input type="file" name="pic" id="pic" accept="image/png, image/jpeg">
+            </div>
+
+            <div id="column2">
+                <label for="bname">Business Name</label>
+                <br>
+                <input type="text" name="bname" id="bname" placeholder="Enter Name" required>
+                <br>
+                <br>
+                <label for="website">Business Link</label>
+                <br>
+                <input type="url" name="website" id="website" placeholder="www.website.com" required>
+                <br>
+                <br>
+                <label for="phone">Contact Number</label>
+                <br>
+                <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXXX" required>
+                <br>
+                <br>
+                <label for="state">Products/Services</label>
+                <br>
+
+                <select name="state" id="state" required>
+                    <option value="a">a</option>
+                    <option value="b">b</option>
+                    <option value="c">c</option>
+                </select>
+
+                <br>
+                <br>
+                <label for="about">About</label>
+                <br>
+                <small>Describe your business in 150 words or less</small>
+                <br>
+                <textarea name="about" id="about" rows="5" cols="40"required></textarea>
+                <br>
+                <br>
+                <input type="submit" value="Save Changes">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
