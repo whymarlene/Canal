@@ -2,9 +2,21 @@
     "name": "WeShallSEE",
     "version": "1.0",
     "description": "Bringing your business to people",
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js" : ["content.js"]
+      }
+    ],
+
     "background": {
         "scripts": ["background.js"],
         "persistent": false
       },
-    "manifest_version": 2
-  }
+
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_title": "Search"
+    },
+      "manifest_version": 2
+    }
