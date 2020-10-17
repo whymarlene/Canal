@@ -224,9 +224,7 @@ li{
     line-height: 24px;
     letter-spacing: -0.006em;
 }
-.signInArea p{
 
-}
 .signInArea  input[type=text], input[type=password] {
     width: 390pt;
     padding: 12px 20px;
@@ -295,7 +293,6 @@ li{
     line-height: 40px;
     letter-spacing: -0.05em;
     display: flex;
-    align-self: start;
 }
 .createAccount label{
     font-style: normal;
@@ -304,9 +301,7 @@ li{
     line-height: 24px;
     letter-spacing: -0.006em;
 }
-.createAccount p{
 
-}
 .createAccount input[type=text], input[type=password] {
     width: 390pt;
     padding: 12px 20px;
