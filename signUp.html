@@ -17,19 +17,50 @@
     <div class="colorblockCA"></div>
     <div class="createAccount">
         <h1>Create an Account</h1>
-        <form action="#">
+        <form id="signUpForm" action="#">
             <label for="nameOfBusiness">Name of Business</label><br>
             <input type="text" placeholder="Enter Name" id="nameOfBusiness" name="nameOfBusiness" required><br>
             <label for="emailAddress">Email Address</label><br>
             <input type="text" placeholder="example@email.com" id="emailAddress" name="emailAddress" required><br><br>
             <label for="password">Password</label><br>
-            <input type="text" placeholder="Enter Password" id="password" name="password" required><br>
+            <input type="password" placeholder="Enter Password" id="password" name="password" required><br>
             <label for="reEnterPassword">Re-enter Password</label><br>
-            <input type="text" placeholder="Enter Password" id="reEnterPassword" name="reEnterPassword" required><br>
-            <input type="submit" value="Sign Up">
+            <input type="password" placeholder="Enter Password" id="reEnterPassword" name="reEnterPassword" required><br>
+            <!--<input type="submit" value="Sign Up">-->
+            <button id="submitButton">Sign Up</button>
         </form>
         <p class="already">Already have an account? &nbsp<a href="signIn.html"> Sign In</a></p>
     </div>
+
+    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyB3yV7EU8a9AJSMdR2BxL_PJY2fzyfAr9c",
+            authDomain: "weshallsee-904fd.firebaseapp.com",
+            databaseURL: "https://weshallsee-904fd.firebaseio.com",
+            projectId: "weshallsee-904fd",
+            storageBucket: "weshallsee-904fd.appspot.com",
+            messagingSenderId: "803911270744",
+            appId: "1:803911270744:web:ba26f1106fff98d6f9652d",
+            measurementId: "G-Y25XJEGD8M"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+
+        //auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+    </script>
 </body>
+
+
 
 </html>
