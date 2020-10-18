@@ -1,4 +1,4 @@
-![Canal](/assets/logo.svg)
+![Canal](/Assets/logo.svg)
 # Canal
  
 ##Connecting small businesses to the world.
