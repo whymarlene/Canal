@@ -15,12 +15,33 @@ firebase.initializeApp(firebaseConfig);
 
 //auth and firestore references
 const auth = firebase.auth();
-const profileRef = firebase.database().ref('profiles')
+const profileRef = firebase.database().ref('profiles');
+
 
 //listen for auth status changes
 auth.onAuthStateChanged(user => {
     if (user) {
+
+        var userId = firebase.auth().currentUser.uid;
+
         console.log('user logged in: ', user);
+
+        profileRef.on('value', function(snapshot) {
+
+            snapshot.forEach(function(childSnapshot) {
+                var childData = childSnapshot.val();
+                
+                if (userId === childSnapshot.key) {
+                    //load data into text input
+                    document.getElementById('bname').value = childData.name;
+                    document.getElementById('website').value = childData.website;
+                    document.getElementById('phone').value = childData.phone;
+                    document.getElementById('prods').value = childData.prods;
+                    document.getElementById('about').value = childData.about;
+
+                }
+            });
+        });
 
     } else {
         console.log('user logged out');
@@ -39,11 +60,14 @@ if (profileForm) {
             var name = getInputVal('bname');
             var website = getInputVal('website');
             var phone = getInputVal('phone');
+
+            // ONLY TAKES FIRST SELECTION
             var prods = getInputVal('prods');
+
             var about = getInputVal('about');
 
-            //save profile
-            saveProfile(name, website, phone, prods, about);
+            //update profile
+            updateProfile(name, website, phone, prods, about);
         }
 
     });
@@ -56,14 +80,46 @@ function getInputVal(id) {
 
 //save profile data to firebase
 function saveProfile(name, website, phone, prods, about) {
-    const newProfileRef = profileRef.push();
-    newProfileRef.set({
-        name: name,
-        website: website,
-        phone: phone,
-        prods: prods,
-        about: about
+    // const newProfileRef = profileRef.push();
+    // newProfileRef.set({
+    //     name: name,
+    //     website: website,
+    //     phone: phone,
+    //     prods: prods,
+    //     about: about,
+    //     id: id
+    // });
+
+    var userId = firebase.auth().currentUser.uid;
+    let userRef = firebase.database().ref('profiles');
+    userRef.child(userId).set({'name': name, 'website': website, 'phone': phone,
+        'prods': prods, 'about': about});
+}
+
+function updateProfile(name, website, phone, prods, about) {
+
+    var userId = firebase.auth().currentUser.uid;
+
+    profileRef.child(userId).update({
+        'name': name,
+        'website': website,
+        'phone': phone,
+        'prods': prods,
+        'about': about
     });
+
+    // profileRef.on('value', function(snapshot) {
+    //
+    //     snapshot.forEach(function(childSnapshot) {
+    //         console.log('im here');
+    //         var childData = childSnapshot.val();
+    //         // console.log('child', childData);
+    //         if (userId === childData.id) {
+    //             //load data into text input
+    //
+    //         }
+    //     });
+    // });
 }
 
 
