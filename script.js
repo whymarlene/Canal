@@ -9,13 +9,29 @@ var firebaseConfig = {
     appId: "1:803911270744:web:ba26f1106fff98d6f9652d",
     measurementId: "G-Y25XJEGD8M"
 };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+
+var firebaseConfig2 = {
+    apiKey: "AIzaSyDLtxioM5OfiO7zLj85eFuLI1mTAyatkvo",
+    authDomain: "tagwss.firebaseapp.com",
+    databaseURL: "https://tagwss.firebaseio.com",
+    projectId: "tagwss",
+    storageBucket: "tagwss.appspot.com",
+    messagingSenderId: "830323140826",
+    appId: "1:830323140826:web:075b9925d7311a25425de3",
+    measurementId: "G-L9FMFLMBWD"
+  };
+  // Initialize Firebase1
+  firebase.initializeApp(firebaseConfig);
+
+  // Initialize Firebase2
+  var secondaryApp = firebase.initializeApp(firebaseConfig2, "secondary");
 
 
 //auth and firestore references
 const auth = firebase.auth();
 const profileRef = firebase.database().ref('profiles');
+const auth2 = secondaryApp.auth();
+const tagRef = secondaryApp.database().ref('tags');
 
 
 //listen for auth status changes
@@ -39,6 +55,7 @@ auth.onAuthStateChanged(user => {
                     document.getElementById('prods').value = childData.prods;
                     document.getElementById('about').value = childData.about;
 
+                    addTags();
                 }
             });
         });
@@ -108,6 +125,8 @@ function updateProfile(name, website, phone, prods, about) {
         'about': about
     });
 
+    addTags();
+
     // profileRef.on('value', function(snapshot) {
     //
     //     snapshot.forEach(function(childSnapshot) {
@@ -120,6 +139,19 @@ function updateProfile(name, website, phone, prods, about) {
     //         }
     //     });
     // });
+}
+
+
+//add tags to second database
+function addTags() {
+    var tags = document.getElementById('prods').value.split(", ");
+
+    tags.forEach(function(tag) {
+        let tagRef = secondaryApp.database().ref('tags');
+        tagRef.child(tag).set({'tag': tag, 'business': document.getElementById('bname').value});
+
+    });
+
 }
 
 

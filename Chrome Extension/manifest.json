@@ -2,6 +2,12 @@
     "name": "WeShallSEE",
     "version": "1.0",
     "description": "Connecting small businesses to you.",
+
+    "background": {
+      "page": "background.html",
+      "persistent": false
+    },
+
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
@@ -9,16 +15,10 @@
       }
     ],
 
-    "background": {
-        "page": "background.html",
-        "persistent": false
-      },
-
     "browser_action": {
       "default_popup": "popup.html",
       "default_title": "Search"
     },
     "manifest_version": 2,
-    "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'"
-
+    "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com/; object-src 'self'"
 }

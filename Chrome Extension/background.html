@@ -1,4 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Create an Account</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <link rel="icon" href="./Assets/logo.svg">
+</head>
+
+<body class="cA">
+<nav>
+    <ul class="navbar">
+        <li class="logo"><a href="index.html"><img src="./Assets/logoWhite.png"></a></li>
+    </ul>
+</nav>
+<div class="colorblockCA"></div>
+<div class="createAccount">
+    <h1>Create an Account</h1>
+    <form id="signUpForm" action="#">
+        <label for="nameOfBusiness">Name of Business</label><br>
+        <input type="text" placeholder="Enter Name" id="nameOfBusiness" name="nameOfBusiness" required><br>
+        <label for="emailAddress">Email Address</label><br>
+        <input type="text" placeholder="example@email.com" id="emailAddress" name="emailAddress" required><br><br>
+        <label for="password">Password</label><br>
+        <input type="password" placeholder="Enter Password" id="password" name="password" required><br>
+        <label for="reEnterPassword">Re-enter Password</label><br>
+        <input type="password" placeholder="Enter Password" id="reEnterPassword" name="reEnterPassword" required><br>
+        <!--<input type="submit" value="Sign Up">-->
+        <button id="submitButton">Sign Up</button>
+    </form>
+    <p class="already">Already have an account? &nbsp<a href="signIn.html"> Sign In</a></p>
+</div>
+
+
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-functions.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+
 <script src="content.js"></script>
+</body>
+
+
+
