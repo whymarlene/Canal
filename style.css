@@ -28,6 +28,9 @@ p {
 * a:hover::after {
     color: #ccc;
 }
+button:hover{
+    color: #ccc;
+}
 /* homepage */
 .homepage {
     background-color: #EFEFF4;
@@ -252,7 +255,7 @@ li{
     box-sizing: border-box;
 
  }
-.signInArea input[type=submit] {
+.signInArea button{
     width: 138pt;
     padding: 12px 20px;
     margin: 8px 0;
@@ -329,7 +332,7 @@ li{
     box-sizing: border-box;
 
   }
-.createAccount input[type=submit] {
+.createAccount button{
     width: 138px;
     padding: 12px 20px;
     margin: 8px 0;
@@ -345,6 +348,7 @@ li{
     line-height: 19px;
 
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+
 }
 .createAccount a {
     color: #469F3D;
@@ -470,4 +474,25 @@ input#file-upload-button {
     line-height: 19px;
 
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+#custom-button{
+    background: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid #EFEFF4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#custom-button:hover{
+    background-color: #ccc;
+}
+
+.image-preview{
+    background: #EFEFF4;
+    border-radius: 20px;
+    height: 165px;
+    width: 165px;
 }

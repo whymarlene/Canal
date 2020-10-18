@@ -27,9 +27,20 @@
         <form id="profile_form">
             <div id="column1">
                 <div id="box">
-                    <img id="image-preview" width="200">
+                    <div class="image-preview">
+                        <img id="image-preview" width="165">
+                    </div>
                     <label for="pic"></label>
-                    <input type="file" name="pic" id="pic" src="#" accept="image/png, image/jpeg" onchange="loadFile(event);">
+                    <input type="file" name="pic" hidden="hidden" id="pic" src="#" accept="image/png, image/jpeg" onchange="loadFile(event);">
+                    <button type="button" id="custom-button"><img src="Assets/camera/outline.svg"></button>
+                    <script>
+                        const realFileButton = document.getElementById("pic");
+                        const customButton = document.getElementById("custom-button");
+
+                        customButton.addEventListener("click", function(){
+                            realFileButton.click();
+                        });
+                    </script>
                 </div>
             </div>
 
