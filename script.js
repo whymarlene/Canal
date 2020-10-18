@@ -46,7 +46,7 @@ auth.onAuthStateChanged(user => {
 
             snapshot.forEach(function(childSnapshot) {
                 var childData = childSnapshot.val();
-                
+
                 if (userId === childSnapshot.key) {
                     //load data into text input
                     document.getElementById('bname').value = childData.name;
@@ -178,7 +178,7 @@ if (signUpForm) {
         //sign up the user
         auth.createUserWithEmailAndPassword(email, password).then(cred => {
             //brings users to the profile page
-            saveProfile(business, '', '', '', '');
+            saveProfile(business, '', '', '', '', '');
             window.location.href = "profile.html";
         }).catch(function(error) {
 
@@ -237,4 +237,11 @@ if (signIn) {
         })
     })
 }
+
+
+
+var loadFile = function(event) {
+    var image = document.getElementById('image-preview');
+    image.src = URL.createObjectURL(event.target.files[0]);
+};
 

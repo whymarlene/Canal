@@ -26,8 +26,11 @@
     <div id="form_box">
         <form id="profile_form">
             <div id="column1">
-                <label for="pic"></label>
-                <input type="file" name="pic" id="pic" accept="image/png, image/jpeg">
+                <div id="box">
+                    <img id="image-preview" width="200">
+                    <label for="pic"></label>
+                    <input type="file" name="pic" id="pic" src="#" accept="image/png, image/jpeg" onchange="loadFile(event);">
+                </div>
             </div>
 
             <div id="column2">
@@ -47,6 +50,8 @@
                 <br>
                 <br>
                 <label for="prods">Products/Services</label>
+                <br>
+                <small>Comma separated list of keywords that describe your business's products/services</small>
                 <br>
                 <input type="text" name="prods" id="prods" placeholder="product1, product2, product3, ..." required>
                 <br>

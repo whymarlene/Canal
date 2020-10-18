@@ -30,7 +30,7 @@ p {
 }
 /* homepage */
 .homepage {
-    background-color: #EFEFF4;;
+    background-color: #EFEFF4;
 }
 li{
     list-style-type: none;
@@ -451,4 +451,23 @@ input[type=file] {
     border-radius: 100px;
     color: #FFFFFF;
     border-color: #FFFFFF;
+}
+
+
+/*image upload*/
+input#file-upload-button {
+    width: 138pt;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background: #008FB2;
+    border-radius: 100px;
+    color: #FFFFFF;
+    border-color: #008FB2;
+    /* FILL-BUTTON-TEXT-SHADOW */
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 }
