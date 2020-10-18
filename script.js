@@ -146,11 +146,10 @@ function updateProfile(name, website, phone, prods, about) {
 function addTags() {
     var tags = document.getElementById('prods').value.split(", ");
 
-    tags.forEach(function(tag) {
-        let tagRef = secondaryApp.database().ref('tags');
-        tagRef.child(tag).set({'tag': tag, 'business': document.getElementById('bname').value});
-
-    });
+        tags.forEach(function(tag) {
+            let tagRef = secondaryApp.database().ref('tags');
+            tagRef.child(tag).set({'tag': tag, 'business': document.getElementById('bname').value});
+        });
 
 }
 
