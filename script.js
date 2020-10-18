@@ -57,6 +57,7 @@ auth.onAuthStateChanged(user => {
 
                     convertURIToImageData(childData.pic).then(function(imageData) {
                         // Here you can use imageData
+                        console.log(uri);
                         document.getElementById('image-preview').src = imagedata_to_image(imageData);
 
                     });
