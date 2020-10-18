@@ -255,7 +255,7 @@ li{
     box-sizing: border-box;
 
  }
-.signInArea button{
+.signInArea input[type=submit]{
     width: 138pt;
     padding: 12px 20px;
     margin: 8px 0;
@@ -271,6 +271,7 @@ li{
 
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 }
+
 .signInArea a{
     color: #008FB2;
 }
@@ -332,7 +333,7 @@ li{
     box-sizing: border-box;
 
   }
-.createAccount button{
+.createAccount input[type=submit]{
     width: 138px;
     padding: 12px 20px;
     margin: 8px 0;
@@ -348,8 +349,8 @@ li{
     line-height: 19px;
 
     text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
-
 }
+
 .createAccount a {
     color: #469F3D;
 }
@@ -491,6 +492,7 @@ input#file-upload-button {
 }
 
 .image-preview{
+    
     background: #EFEFF4;
     border-radius: 20px;
     height: 165px;
