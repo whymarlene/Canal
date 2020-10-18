@@ -113,10 +113,39 @@ li{
     color: #FFFFFF;
 }
 
+#graphicHome {
+    position: absolute;
+    left: 60%;
+    top: 20%;
+}
+
+#graphicLM {
+    position: absolute;
+    left: 55%;
+    top: 25%;
+}
+
+#wic {
+    position: absolute;
+    left: 9.71%;
+    right: 45%;
+    top: 25.67%;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 40px;
+    /* identical to box height, or 100% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.05em;
+}
+
 .desc {
     position: absolute;
     left: 9.71%;
-    right: 42.14%;
+    right: 45%;
     top: 50.67%;
     bottom: 42.22%;
 }
@@ -176,18 +205,6 @@ li{
 }
 .signUp a{
     color: #FFFFFF;
-}
-.parallelogram {
-    /* Rectangle 3 */
-    position: absolute;
-    left: 63.86%;
-    right: 11.43%;
-    top: 24.22%;
-    bottom: 23%;
-    transform: skew(-10deg);
-
-    background: #FFFFFF;
-    border-radius: 15px;
 }
 
 

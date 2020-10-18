@@ -1,3 +1,74 @@
+//firebase initialize
+var firebaseConfig = {
+    apiKey: "AIzaSyB3yV7EU8a9AJSMdR2BxL_PJY2fzyfAr9c",
+    authDomain: "weshallsee-904fd.firebaseapp.com",
+    databaseURL: "https://weshallsee-904fd.firebaseio.com",
+    projectId: "weshallsee-904fd",
+    storageBucket: "weshallsee-904fd.appspot.com",
+    messagingSenderId: "803911270744",
+    appId: "1:803911270744:web:ba26f1106fff98d6f9652d",
+    measurementId: "G-Y25XJEGD8M"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+
+//auth and firestore references
+const auth = firebase.auth();
+const profileRef = firebase.database().ref('profiles')
+
+//listen for auth status changes
+auth.onAuthStateChanged(user => {
+    if (user) {
+        console.log('user logged in: ', user);
+
+    } else {
+        console.log('user logged out');
+    }
+});
+
+//listen for profile form submit
+const profileForm = document.querySelector('#profile_form');
+
+if (profileForm) {
+    profileForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (auth != null) {
+            //get values
+            var name = getInputVal('bname');
+            var website = getInputVal('website');
+            var phone = getInputVal('phone');
+            var prods = getInputVal('prods');
+            var about = getInputVal('about');
+
+            //save profile
+            saveProfile(name, website, phone, prods, about);
+        }
+
+    });
+}
+
+//get form values
+function getInputVal(id) {
+    return document.getElementById(id).value;
+}
+
+//save profile data to firebase
+function saveProfile(name, website, phone, prods, about) {
+    const newProfileRef = profileRef.push();
+    newProfileRef.set({
+        name: name,
+        website: website,
+        phone: phone,
+        prods: prods,
+        about: about
+    });
+}
+
+
+
+
 //sign up
 const signUpForm = document.querySelector('#signUpForm');
 
@@ -9,6 +80,7 @@ if (signUpForm) {
         const email = signUpForm['emailAddress'].value;
         const password = signUpForm['password'].value;
         const reEnter = signUpForm['reEnterPassword'].value;
+        const business = signUpForm['nameOfBusiness'].value;
 
         if (password !== reEnter) {
             alert('Your passwords do not match!');
@@ -18,6 +90,7 @@ if (signUpForm) {
         //sign up the user
         auth.createUserWithEmailAndPassword(email, password).then(cred => {
             //brings users to the profile page
+            saveProfile(business, '', '', '', '');
             window.location.href = "profile.html";
         }).catch(function(error) {
 
