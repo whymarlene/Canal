@@ -55,6 +55,12 @@ auth.onAuthStateChanged(user => {
                     document.getElementById('prods').value = childData.prods;
                     document.getElementById('about').value = childData.about;
 
+                    convertURIToImageData(childData.pic).then(function(imageData) {
+                        // Here you can use imageData
+                        document.getElementById('image-preview').src = imagedata_to_image(imageData);
+
+                    });
+
                     addTags();
                 }
             });
@@ -84,7 +90,9 @@ if (profileForm) {
             var about = getInputVal('about');
 
             //update profile
-            updateProfile(name, website, phone, prods, about);
+            updateProfile(name, website, phone, prods, about, uri);
+
+            alert("Your changes have been saved!");
         }
 
     });
@@ -96,7 +104,7 @@ function getInputVal(id) {
 }
 
 //save profile data to firebase
-function saveProfile(name, website, phone, prods, about) {
+function saveProfile(name, website, phone, prods, about, pic) {
     // const newProfileRef = profileRef.push();
     // newProfileRef.set({
     //     name: name,
@@ -110,10 +118,10 @@ function saveProfile(name, website, phone, prods, about) {
     var userId = firebase.auth().currentUser.uid;
     let userRef = firebase.database().ref('profiles');
     userRef.child(userId).set({'name': name, 'website': website, 'phone': phone,
-        'prods': prods, 'about': about});
+        'prods': prods, 'about': about, 'pic': pic});
 }
 
-function updateProfile(name, website, phone, prods, about) {
+function updateProfile(name, website, phone, prods, about, pic) {
 
     var userId = firebase.auth().currentUser.uid;
 
@@ -122,7 +130,8 @@ function updateProfile(name, website, phone, prods, about) {
         'website': website,
         'phone': phone,
         'prods': prods,
-        'about': about
+        'about': about,
+        'pic': pic
     });
 
     addTags();
@@ -177,7 +186,7 @@ if (signUpForm) {
         //sign up the user
         auth.createUserWithEmailAndPassword(email, password).then(cred => {
             //brings users to the profile page
-            saveProfile(business, '', '', '', '', '');
+            saveProfile(business, '', '', '', '', '', '');
             window.location.href = "profile.html";
         }).catch(function(error) {
 
@@ -237,10 +246,46 @@ if (signIn) {
     })
 }
 
-
+var uri = '';
 
 var loadFile = function(event) {
     var image = document.getElementById('image-preview');
     image.src = URL.createObjectURL(event.target.files[0]);
 };
 
+function encodeImageFileAsURL(element) {
+    var file = element.files[0];
+    var reader = new FileReader();
+    reader.onloadend = function() {
+        console.log('RESULT', reader.result)
+        uri = reader.result;
+    }
+    reader.readAsDataURL(file);
+}
+
+function convertURIToImageData(URI) {
+    return new Promise(function(resolve, reject) {
+        if (URI == null) return reject();
+        var canvas = document.createElement('canvas'),
+            context = canvas.getContext('2d'),
+            image = new Image();
+        image.addEventListener('load', function() {
+            canvas.width = image.width;
+            canvas.height = image.height;
+            context.drawImage(image, 0, 0, canvas.width, canvas.height);
+            resolve(context.getImageData(0, 0, canvas.width, canvas.height));
+        }, false);
+        image.src = URI;
+    });
+}
+
+function imagedata_to_image(imagedata) {
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = imagedata.width;
+    canvas.height = imagedata.height;
+    ctx.putImageData(imagedata, 0, 0);
+
+    var image = canvas.toDataURL();
+    return image;
+}
